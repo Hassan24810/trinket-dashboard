@@ -1,0 +1,6 @@
+<?php
+$DB_HOST = "localhost";
+$DB_NAME = "shop";
+$DB_USER = "root";
+$DB_PASS = "";
+ 

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Trinket Theory Overview</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body data-page="overview">
+  <div class="dashboard-shell">
+    <aside class="sidebar">
+      <div class="brand">
+        <img class="brand-logo" src="images/logo.png" alt="Trinket Theory logo" />
+        <div>
+          <h1>Trinket Theory</h1>
+          <p>Admin Dashboard</p>
+        </div>
+      </div>
+
+      <nav>
+        <a href="admin.html" class="active">Overview</a>
+        <a href="products.html">Products</a>
+        <a href="add_product.html">Add Product</a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <p>Powered by</p>
+        <div class="powered-by">
+          <img src="images/mylogo.png" alt="Powered by logo" />
+          <span>RJ Tech</span>
+        </div>
+      </div>
+    </aside>
+
+    <main class="main-panel">
+      <header class="topbar">
+        <div>
+          <h1>Overview</h1>
+          <p>All key metrics and latest product details are shown here.</p>
+        </div>
+        <button id="refreshBtn" class="secondary-btn">Refresh</button>
+      </header>
+
+      <div class="container">
+        <section id="dashboard" class="dashboard-grid">
+          <article class="summary-card">
+            <h3>Total products</h3>
+            <p id="summaryTotal">0</p>
+          </article>
+          <article class="summary-card">
+            <h3>Average price</h3>
+            <p id="summaryAverage">PKR 0.00</p>
+          </article>
+          <article class="summary-card">
+            <h3>Latest product</h3>
+            <p id="summaryLatest">No products yet</p>
+          </article>
+        </section>
+
+        <section class="card">
+          <h2>Quick Access</h2>
+          <div class="action-cards">
+            <a class="action-card" href="add_product.html">Add New Product</a>
+            <a class="action-card" href="products.html">View Product List</a>
+          </div>
+        </section>
+
+        <section class="card recent-card">
+          <div class="list-header">
+            <div>
+              <h2>Recent Products</h2>
+              <p>Latest items added to the catalog.</p>
+            </div>
+            <div class="product-count">Latest additions</div>
+          </div>
+          <div id="productList" class="product-list">Loading latest products...</div>
+        </section>
+      </div>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
