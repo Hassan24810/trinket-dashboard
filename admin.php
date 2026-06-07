@@ -1,38 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Trinket Theory Overview</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body data-page="overview">
-  <div class="dashboard-shell">
-    <aside class="sidebar">
-      <div class="brand">
-        <img class="brand-logo" src="images/logo.png" alt="Trinket Theory logo" />
-        <div>
-          <h1>Trinket Theory</h1>
-          <p>Admin Dashboard</p>
-        </div>
-      </div>
-
-      <nav>
-        <a href="admin.html" class="active">Overview</a>
-        <a href="products.html">Products</a>
-        <a href="add_product.html">Add Product</a>
-      </nav>
-
-      <div class="sidebar-footer">
-        <p>Powered by</p>
-        <div class="powered-by">
-          <img src="images/mylogo.png" alt="Powered by logo" />
-          <span>RJ Tech</span>
-        </div>
-      </div>
-    </aside>
-
-    <main class="main-panel">
+<?php
+$page = 'overview';
+$title = 'Trinket Theory Overview';
+include __DIR__ . '/includes/header.php';
+?>
       <header class="topbar">
         <div>
           <h1>Overview</h1>
@@ -60,8 +30,8 @@
         <section class="card">
           <h2>Quick Access</h2>
           <div class="action-cards">
-            <a class="action-card" href="add_product.html">Add New Product</a>
-            <a class="action-card" href="products.html">View Product List</a>
+            <a class="action-card" href="add_product.php">Add New Product</a>
+            <a class="action-card" href="products.php">View Product List</a>
           </div>
         </section>
 
@@ -76,9 +46,4 @@
           <div id="productList" class="product-list">Loading latest products...</div>
         </section>
       </div>
-    </main>
-  </div>
-
-  <script src="script.js"></script>
-</body>
-</html>
+<?php include __DIR__ . '/includes/footer.php';

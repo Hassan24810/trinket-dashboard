@@ -1,8 +1,7 @@
 const pageType = document.body.dataset.page || "";
-// Use the Apache/XAMPP server as the API backend so PHP endpoints are reachable.
-// If you open pages with Live Server (127.0.0.1:5500) PHP won't run — use
-// http://localhost/trinket-dashboard/ in that case.
-const API_BASE = "http://localhost/trinket-dashboard/";
+// Use the same folder-relative PHP endpoint for the API.
+// Open pages through Apache/XAMPP so the PHP backend is available.
+const API_BASE = "product_api.php";
 const form = document.getElementById("productForm");
 const message = document.getElementById("message");
 const submitBtn = document.getElementById("submitBtn");
@@ -83,7 +82,7 @@ function renderProductList(products) {
 
 async function fetchProducts() {
   try {
-    const res = await fetch(API_BASE + "add_product.php");
+    const res = await fetch(API_BASE);
     const data = await res.json();
     if (!data.success || !Array.isArray(data.products)) {
       return [];
@@ -108,7 +107,7 @@ async function deleteProduct(productId) {
   }
 
   try {
-    const res = await fetch(API_BASE + `add_product.php?id=${encodeURIComponent(productId)}`, {
+    const res = await fetch(API_BASE + `?id=${encodeURIComponent(productId)}`, {
       method: "DELETE",
     });
     const data = await res.json();
@@ -153,7 +152,7 @@ if (form && pageType === "add") {
     }
 
     try {
-      const res = await fetch(API_BASE + "add_product.php", {
+      const res = await fetch(API_BASE, {
         method: "POST",
         body: formData,
       });
